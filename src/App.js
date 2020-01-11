@@ -3,6 +3,7 @@ import Menu from './components/Menu.js'
 import Footer from './components/Footer.js'
 import Home from './components/Home.js'
 
+// first app ever
 class App extends React.Component {
   render() {
     return (
