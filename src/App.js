@@ -4,6 +4,7 @@ import Footer from './components/Footer.js'
 import Home from './components/Home.js'
 import Evenements from './components/Evenements.js'
 import Clubs from './components/Clubs.js'
+import SignInUp from './components/SignInUp.js'
 
 class App extends React.Component {
   constructor(props)
@@ -23,6 +24,7 @@ class App extends React.Component {
         {this.state.selected=="home"&&<Home />}
         {this.state.selected=="event"&&<Evenements />}
         {this.state.selected=="clubs"&&<Clubs />}
+        {this.state.selected=="signInUp"&&<SignInUp />}
         <Footer />
       </div>    
       );
