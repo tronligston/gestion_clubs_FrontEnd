@@ -9,17 +9,16 @@ class Evenement extends Component {
             <div className="event_body d-flex flex-row align-items-start justify-content-start">
                 <div className="event_date">
                     <div className="d-flex flex-column align-items-center justify-content-center trans_200">
-                        <div className="event_day trans_200">21</div>
-                        <div className="event_month trans_200">Aug</div>
+                        <div className="event_day trans_200">{this.props.event.idEvent}</div>
                     </div>
                 </div>
                 <div className="event_content">
-                    <div className="event_title"><a href="#">Which Country Handles Student Debt?</a></div>
+                    <div className="event_title"><a href="#">{this.props.event.titre}</a></div>
                     <div className="event_info_container">
                         <div className="event_info"><i className="fa fa-clock-o" aria-hidden="true"></i><span>15.00 - 19.30</span></div>
-                        <div className="event_info"><i className="fa fa-map-marker" aria-hidden="true"></i><span>25 New York City</span></div>
+                        <div className="event_info"><i className="fa fa-map-marker" aria-hidden="true"></i><span>{this.props.event.lieu}</span></div>
                         <div className="event_text">
-                            <p>Policy analysts generally agree on a need for reform, but not on which path...</p>
+                            <p>{this.props.event.description}</p>
                         </div>
                     </div>
                 </div>

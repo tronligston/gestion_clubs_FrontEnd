@@ -10,7 +10,6 @@ class App extends React.Component {
     super(props);
     this.state={selected:'home'};
     this.menuClicked=this.menuClicked.bind(this);
-    console.log(this.state.selected)
   }
   menuClicked = (li_Clicked)=>{
     this.setState({selected:li_Clicked})
@@ -20,8 +19,8 @@ class App extends React.Component {
     return (
       <div className="super_container">  
         <Menu menuClicked={this.menuClicked} selected={this.state.selected} />
-        {console.log(this.state)}
-        {this.state.selected=="event"?<Evenements />:<Home />}
+        {this.state.selected=="home"&&<Home />}
+        {this.state.selected=="event"&&<Evenements />}
         <Footer />
       </div>    
       );
