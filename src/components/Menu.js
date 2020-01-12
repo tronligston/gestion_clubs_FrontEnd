@@ -25,9 +25,6 @@ class Menu extends React.Component {
                     <div>info.deercreative@gmail.com</div>
                   </li>
                 </ul>
-                <div className="top_bar_login ml-auto">
-                  <div className="login_button"><a href="#">Register or Login</a></div>
-                </div>
               </div>
             </div>
           </div>
@@ -56,12 +53,13 @@ class Menu extends React.Component {
                       onClick={this.props.menuClicked.bind(this,'event')}>
                     <a href="#">Événements</a>
                   </li>
-                  <li className={this.props.selected=='event'&&"active"}
+                  <li className={this.props.selected=='clubs'&&"active"}
                       onClick={this.props.menuClicked.bind(this,'clubs')}>
                     <a href="#">Clubs</a>
                   </li>
-                  <li><a href="#">Page</a></li>
-                  <li><a href="contact.html">Contact</a></li>
+                  <li className="login_button"
+                      onClick={this.props.menuClicked.bind(this,'signInUp')}>
+                    <a href="#">Regiter or Login</a></li>
                 </ul>
                 <div className="search_button"><i className="fa fa-search" aria-hidden="true"></i></div>
   
