@@ -3,6 +3,7 @@ import Menu from './components/Menu.js'
 import Footer from './components/Footer.js'
 import Home from './components/Home.js'
 import Evenements from './components/Evenements.js'
+import Clubs from './components/Clubs'
 
 // first app ever
 class App extends React.Component {
@@ -23,6 +24,8 @@ class App extends React.Component {
         <Menu menuClicked={this.menuClicked} selected={this.state.selected} />
         {console.log(this.state)}
         {this.state.selected=="event"?<Evenements />:<Home />}
+        {this.state.selected=="clubs"?<Clubs />:<Home />}
+
         <Footer />
       </div>    
       );
