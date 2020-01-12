@@ -1,6 +1,7 @@
 import React from 'react';
 
 class Menu extends React.Component {
+
   render() {
     return (
 
@@ -42,13 +43,19 @@ class Menu extends React.Component {
             <div className="header_content d-flex flex-row align-items-center justify-content-start">
               <div className="logo_container">
                 <a href="#">
-                  <div className="logo_text">Unic<span>at</span></div>
+                  <div className="logo_text"><span>Clubs</span>Universitaire</div>
                 </a>
               </div>
               <nav className="main_nav_contaner ml-auto">
                 <ul className="main_nav">
-                  <li className="active"><a href="#">Home</a></li>
-                  <li><a href="about.html">About</a></li>
+                  <li className={this.props.selected=='home'&&"active"}
+                      onClick={this.props.menuClicked.bind(this,'home')}>
+                    <a href="#">Home</a>
+                  </li>
+                  <li className={this.props.selected=='event'&&"active"}
+                      onClick={this.props.menuClicked.bind(this,'event')}>
+                    <a href="#">Événements</a>
+                  </li>
                   <li><a href="courses.html">Courses</a></li>
                   <li><a href="blog.html">Blog</a></li>
                   <li><a href="#">Page</a></li>
