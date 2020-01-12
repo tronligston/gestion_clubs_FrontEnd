@@ -30,7 +30,7 @@ class Evenements extends Component {
 
 				{this.state.events.map(event =>{
 					console.log(event)
-					return <Evenement event={event}/>
+					return <Evenement event={event} key={event.idEvent}/>
 				})}
                 
 

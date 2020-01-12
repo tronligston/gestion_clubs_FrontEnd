@@ -3,6 +3,7 @@ import Menu from './components/Menu.js'
 import Footer from './components/Footer.js'
 import Home from './components/Home.js'
 import Evenements from './components/Evenements.js'
+import Clubs from './components/Clubs.js'
 
 class App extends React.Component {
   constructor(props)
@@ -21,6 +22,7 @@ class App extends React.Component {
         <Menu menuClicked={this.menuClicked} selected={this.state.selected} />
         {this.state.selected=="home"&&<Home />}
         {this.state.selected=="event"&&<Evenements />}
+        {this.state.selected=="clubs"&&<Clubs />}
         <Footer />
       </div>    
       );
