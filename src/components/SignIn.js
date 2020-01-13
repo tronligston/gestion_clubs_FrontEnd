@@ -1,8 +1,25 @@
 import React, {Component,Fragment} from 'react';
 
 class SignIn extends Component {
+	constructor(props)
+	{
+		super(props)
+		this.state={login:"",mdp:""}
+		this.handleChange=this.handleChange.bind(this)
+		this.submited=this.submited.bind(this)
+	}
+
+	handleChange(event){
+		this.setState({[event.target.name]:event.target.value})
+	}
+
+	submited(){
+		
+	}
 
 render(){
+	console.log(this.state.login)
+	console.log(this.state.mdp)
     return (
 
         <div className="d-flex justify-content-center h-100">
@@ -21,20 +38,22 @@ render(){
 						<div className="input-group-prepend">
 							<span className="input-group-text"></span>
 						</div>
-						<input type="text" className="form-control" placeholder="username"/>
+						<input name="login" type="text" className="form-control" placeholder="username"
+						onChange={this.handleChange}/>
 						
 					</div>
 					<div className="input-group form-group">
 						<div className="input-group-prepend">
 							<span className="input-group-text"></span>
 						</div>
-						<input type="password" className="form-control" placeholder="password"/>
+						<input name="mdp" type="password" className="form-control" placeholder="password"
+						onChange={this.handleChange}/>
 					</div>
 					<div className="row align-items-center remember">
 						<input type="checkbox"/>Remember Me
 					</div>
 					<div className="form-group">
-						<input type="submit" value="Login" className="btn float-right login_btn"/>
+						<input onClick={this.submited} type="submit" value="Login" className="btn float-right login_btn"/>
 					</div>
 				</form>
 			</div>

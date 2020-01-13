@@ -34,8 +34,6 @@ class Evenements extends Component {
 				})}
                 
 
-				
-
 			</div>
 		</div>
 	</div>
