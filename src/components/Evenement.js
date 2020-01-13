@@ -1,11 +1,23 @@
 import React, {Component,Fragment} from 'react';
 
 class Evenement extends Component {
+
+    
+
+      Click = () => {
+        this.context.router.push({
+          pathname: "/CompDetails",
+          state: {data: this.props.event}
+        }); 
+      }
+
   render() {
     return (
         <div className="col-lg-4 event_col">
         <div className="event event_left">
-            <div className="event_image"><img src="images/event_1.jpg" alt=""/></div>
+            <div className="event_image"><img src="images/event_1.jpg" alt="" onClick={this.Click}/>
+            
+            </div>
             <div className="event_body d-flex flex-row align-items-start justify-content-start">
                 <div className="event_date">
                     <div className="d-flex flex-column align-items-center justify-content-center trans_200">

@@ -1,4 +1,6 @@
 import React, {Component,Fragment} from 'react';
+import request from 'superagent';
+
 
 class SignIn extends Component {
 	constructor(props)
@@ -14,9 +16,23 @@ class SignIn extends Component {
 	}
 
 	submited(){
-		
-	}
 
+		console.log('response');
+		request
+			.post('http://localhost:8080/comptes/verifyLogin')
+			.set('Content-Type', 'application/json')
+			.send({ login: this.state.login, password: this.state.mdp })
+			.end(function(err, res){
+				if (res.status >= 200 && res.status < 300) {
+					alert("Marhba")
+					return res;
+				
+				  } else {
+					alert("fin ghadi fin awa ghadi")
+				   console.log('fuck');
+				  }
+			});  
+	}
 render(){
 	console.log(this.state.login)
 	console.log(this.state.mdp)
@@ -53,7 +69,7 @@ render(){
 						<input type="checkbox"/>Remember Me
 					</div>
 					<div className="form-group">
-						<input onClick={this.submited} type="submit" value="Login" className="btn float-right login_btn"/>
+						<input onClick={this.submited} type="button" value="Login" className="btn float-right login_btn"/>
 					</div>
 				</form>
 			</div>
