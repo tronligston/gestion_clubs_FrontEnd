@@ -1,22 +1,42 @@
 import React, {Component,Fragment} from 'react';
+import Club from './Club.js'
 import Axios from 'axios';
 import Evenement from './Evenement';
 
 class EvenementDetail extends Component {
-	
 
+constructor(props){
+    super(props)
+    this.state={event:{},clubs:[]}
+}
+	
+componentWillMount(){
+    var url1='http://localhost:8080/events/all/'
+    url1=url1.concat(this.props.id)
+    var url2='http://localhost:8080/events/clubsOfEvents/'
+    url2=url2.concat(this.props.id)
+    
+    Axios.get(url1).then(
+			res=>{
+				this.setState({event: res.data})
+            })
+    Axios.get(url2).then(
+        res=>{
+            this.setState({clubs: res.data})
+        })
+}
 render(){
     return(
-        <div className="col-lg-8">
+        <div className="container">
 					
 					<div className="course_container">
 						<div className="course_title">Software Training</div>
-						<div className="course_info d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+						<div className="course_infox d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 
 							
 							<div className="course_info_item">
-								<div className="course_info_title">Teacher:</div>
-								<div className="course_info_text"><a href="#">Jacke Masito</a></div>
+								<div className="course_info_title">Theme</div>
+								<div className="course_info_text"><a href="#">{this.state.event.theme}</a></div>
 							</div>
 
 							
@@ -27,8 +47,8 @@ render(){
 
 							
 							<div className="course_info_item">
-								<div className="course_info_title">Categories:</div>
-								<div className="course_info_text"><a href="#">Languages</a></div>
+								<div className="course_info_title">Lieu:</div>
+								<div className="course_info_text"><a href="#">{this.state.event.lieu}</a></div>
 							</div>
 
 						</div>
@@ -39,18 +59,18 @@ render(){
 						
 						<div className="course_tabs_container">
 							<div className="tabs d-flex flex-row align-items-center justify-content-start">
-								<div className="tab active">description</div>
-								<div className="tab">curriculum</div>
-								<div className="tab">reviews</div>
+								<div className="tab active">Description</div>
+								<div className="tab">Clubs Participants</div>
+								<div className="tab">Reviews</div>
 							</div>
 							<div className="tab_panels">
 
 								
 								<div className="tab_panel active">
-									<div className="tab_panel_title">Software Training</div>
+									<div className="tab_panel_title">{this.state.event.theme}</div>
 									<div className="tab_panel_content">
 										<div className="tab_panel_text">
-											<p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosquad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Lorem Ipsn gravida nibh vel velit auctor aliquet. Class aptent taciti sociosquad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+											<p>{this.state.event.description}</p>
 										</div>
 										<div className="tab_panel_section">
 											<div className="tab_panel_subtitle">Requirements</div>
@@ -119,93 +139,27 @@ render(){
 
 								
 								<div className="tab_panel tab_panel_2">
-									<div className="tab_panel_content">
-										<div className="tab_panel_title">Software Training</div>
-										<div className="tab_panel_content">
-											<div className="tab_panel_text">
-												<p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
-											</div>
+        <div className="courses" style={{marginTop:0,paddingTop:0}}>
+		<div className="container" >
+			<div className="row">
+				<div className="col">
+					<div className="section_title_container text-center">
+						<h2 className="section_title">Liste des Clubs</h2>
+					</div>
+				</div>
+			</div>
+			<div className="row courses_row">
+				
+				{this.state.clubs.map(club =>
+					{
+						return <Club club={club} key={club.idClub}/>
+					})}
 
-											
-											<ul className="dropdowns">
-												<li className="has_children">
-													<div className="dropdown_item">
-														<div className="dropdown_item_title"><span>Lecture 1:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
-														<div className="dropdown_item_text">
-															<p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
-														</div>
-													</div>
-													<ul>
-														<li>
-															<div className="dropdown_item">
-																<div className="dropdown_item_title"><span>Lecture 1.1:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
-																<div className="dropdown_item_text">
-																	<p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
-																</div>
-															</div>
-														</li>
-														<li>
-															<div className="dropdown_item">
-																<div className="dropdown_item_title"><span>Lecture 1.2:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
-																<div className="dropdown_item_text">
-																	<p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
-																</div>
-															</div>
-														</li>
-													</ul>
-												</li>
-												<li className="has_children">
-													<div className="dropdown_item">
-														<div className="dropdown_item_title"><span>Lecture 2:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
-														<div className="dropdown_item_text">
-															<p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
-														</div>
-													</div>
-													<ul>
-														<li>
-															<div className="dropdown_item">
-																<div className="dropdown_item_title"><span>Lecture 2.1:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
-																<div className="dropdown_item_text">
-																	<p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
-																</div>
-															</div>
-														</li>
-														<li>
-															<div className="dropdown_item">
-																<div className="dropdown_item_title"><span>Lecture 2.2:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
-																<div className="dropdown_item_text">
-																	<p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
-																</div>
-															</div>
-														</li>
-													</ul>
-												</li>
-												<li>
-													<div className="dropdown_item">
-														<div className="dropdown_item_title"><span>Lecture 3:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
-														<div className="dropdown_item_text">
-															<p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
-														</div>
-													</div>
-												</li>
-												<li>
-													<div className="dropdown_item">
-														<div className="dropdown_item_title"><span>Lecture 4:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
-														<div className="dropdown_item_text">
-															<p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
-														</div>
-													</div>
-												</li>
-												<li>
-													<div className="dropdown_item">
-														<div className="dropdown_item_title"><span>Lecture 5:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
-														<div className="dropdown_item_text">
-															<p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
-														</div>
-													</div>
-												</li>
-											</ul>
-										</div>
+				
+
+			
+		</div>
+	</div>
 									</div>
 								</div>
 

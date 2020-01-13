@@ -2,6 +2,10 @@ import React, {Component,Fragment} from 'react';
 
 class Evenement extends Component {
   render() {
+      {
+        var url1='http://localhost:3000/evenement/'
+        url1=url1.concat(this.props.event.idEvent)
+      }
     return (
         <div className="col-lg-4 event_col">
         <div className="event event_left">
@@ -13,7 +17,7 @@ class Evenement extends Component {
                     </div>
                 </div>
                 <div className="event_content">
-                    <div className="event_title"><a href="#">{this.props.event.titre}</a></div>
+                    <div className="event_title"><a href={url1}>{this.props.event.titre}</a></div>
                     <div className="event_info_container">
                         <div className="event_info"><i className="fa fa-clock-o" aria-hidden="true"></i><span>15.00 - 19.30</span></div>
                         <div className="event_info"><i className="fa fa-map-marker" aria-hidden="true"></i><span>{this.props.event.lieu}</span></div>
