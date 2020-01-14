@@ -1,28 +1,27 @@
 import React, {Component,Fragment} from 'react';
-import Club from './Club.js'
+import Evenement from './Evenement.js'
 import Axios from 'axios';
-import Evenement from './Evenement';
 
-class EvenementDetail extends Component {
+class ClubDetail extends Component {
 
 constructor(props){
     super(props)
-    this.state={event:{},clubs:[]}
+    this.state={club:{},events:[]}
 }
 	
 componentWillMount(){
-    var url1='http://localhost:8080/events/all/'
+    var url1='http://localhost:8080/clubs/search/'
     url1=url1.concat(this.props.id)
-    var url2='http://localhost:8080/events/clubsOfEvents/'
+    var url2='http://localhost:8080/clubs/eventsClub/'
     url2=url2.concat(this.props.id)
     
     Axios.get(url1).then(
 			res=>{
-				this.setState({event: res.data})
+				this.setState({club: res.data})
             })
     Axios.get(url2).then(
         res=>{
-            this.setState({clubs: res.data})
+            this.setState({events: res.data})
         })
 }
 render(){
@@ -35,8 +34,8 @@ render(){
 
 							
 							<div className="course_info_item">
-								<div className="course_info_title">Theme</div>
-								<div className="course_info_text"><a href="#">{this.state.event.theme}</a></div>
+								<div className="course_info_title">Club's Name</div>
+								<div className="course_info_text"><a href="#">{this.state.club.intitule}</a></div>
 							</div>
 
 							
@@ -47,8 +46,8 @@ render(){
 
 							
 							<div className="course_info_item">
-								<div className="course_info_title">Lieu:</div>
-								<div className="course_info_text"><a href="#">{this.state.event.lieu}</a></div>
+								<div className="course_info_title">Date de Création:</div>
+								<div className="course_info_text"><a href="#">{String(this.state.club.dateCreation).substring(0,10)}</a></div>
 							</div>
 
 						</div>
@@ -60,17 +59,17 @@ render(){
 						<div className="course_tabs_container">
 							<div className="tabs d-flex flex-row align-items-center justify-content-start">
 								<div className="tab active">Description</div>
-								<div className="tab">Clubs Participants</div>
+								<div className="tab">Evenements organisés</div>
 								<div className="tab">Reviews</div>
 							</div>
 							<div className="tab_panels">
 
 								
 								<div className="tab_panel active">
-									<div className="tab_panel_title">{this.state.event.theme}</div>
+									<div className="tab_panel_title">{this.state.club.intitule}</div>
 									<div className="tab_panel_content">
 										<div className="tab_panel_text">
-											<p>{this.state.event.description}</p>
+											<p>{this.state.club.description}</p>
 										</div>
 										<div className="tab_panel_section">
 											<div className="tab_panel_subtitle">Requirements</div>
@@ -143,9 +142,9 @@ render(){
 		<div className="container" >
 			<div className="row courses_row">
 				
-				{this.state.clubs.map(club =>
+				{this.state.events.map(event =>
 					{
-						return <Club club={club} key={club.idClub}/>
+						return <Evenement event={event} key={event.idEvent}/>
 					})}
 
 				
@@ -259,4 +258,4 @@ render(){
 
 }
 
-export default EvenementDetail;
+export default ClubDetail;

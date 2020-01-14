@@ -2,12 +2,16 @@ import React, {Component,Fragment} from 'react';
 
 class Club extends Component {
   render() {
+	{
+        var url1='http://localhost:3000/club/'
+        url1=url1.concat(this.props.club.idClub)
+      }
     return (
         <div className="col-lg-4 course_col">
 					<div className="course">
 						<div className="course_image"><img src="images/course_1.jpg" alt=""/></div>
 						<div className="course_body">
-							<h3 className="course_title"><a href="course.html">{this.props.club.intitule}</a></h3>
+							<h3 className="course_title"><a href={url1}>{this.props.club.intitule}</a></h3>
 							<div className="course_teacher">Team Leader :  {this.props.club.teamLeader.nom}</div>
 							<div className="course_text">
 								<p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
