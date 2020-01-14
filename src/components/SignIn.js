@@ -24,18 +24,18 @@ class SignIn extends Component {
 			.send({ login: this.state.login, password: this.state.mdp })
 			.end(function(err, res){
 				if (res.status >= 200 && res.status < 300) {
-					alert("Marhba")
+					var url='http://localhost:3000/authentified/'
+					const utilisateur=JSON.parse(res.text)
+					url=url.concat(utilisateur.utilisateur.idUser)
+					window.location.replace(url)
 					return res;
 				
 				  } else {
 					alert("fin ghadi fin awa ghadi")
-				   console.log('fuck');
 				  }
 			});  
 	}
 render(){
-	console.log(this.state.login)
-	console.log(this.state.mdp)
     return (
 
         <div className="d-flex justify-content-center h-100">

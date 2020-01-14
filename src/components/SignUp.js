@@ -25,7 +25,8 @@ class SignUp extends Component {
 			.send({login:this.state.login,password:this.state.password,utilisateur:{nom:this.state.nom,email:this.state.email,age:this.state.age}})
 			.end(function(err, res){
 				if (res.status >= 200 && res.status < 300) {
-					alert("Compte tcrea mzyan")
+					console.log(res.text)
+					alert("hey")
 					return res;
 				
 				  } else {
