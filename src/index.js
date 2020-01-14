@@ -5,10 +5,16 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom' 
 import App2 from './components/App2'
+import App3 from './components/App3'
 
 const hundle=props=>{
     const id=props.match.params.id
     return <App2 id={id}/>
+}
+
+const hundle2=props=>{
+    const id=props.match.params.id
+    return <App3 id={id}/>
 }
 
 const routing = (
@@ -16,6 +22,7 @@ const routing = (
       <div>
         <Route exact path="/" component={App} />
         <Route path="/evenement/:id" component={hundle} />
+        <Route path="/club/:id" component={hundle2} />
       </div>
     </Router>
   )

@@ -1,15 +1,15 @@
 import React from 'react';
 import Menu2 from './Menu2.js'
 import Footer from './Footer.js'
-import EvenementDetail from './EvenementDetail.js'
+import ClubDetail from './ClubDetail'
 
-class App2 extends React.Component {
+class App3 extends React.Component {
 
   render() {
     return (
       <div className="super_container">  
         <Menu2 />
-        <EvenementDetail id={this.props.id}/>
+        <ClubDetail id={this.props.id}/>
         <Footer />
       </div>    
       );
@@ -17,4 +17,4 @@ class App2 extends React.Component {
 
 }
 
-export default App2;
+export default App3;
