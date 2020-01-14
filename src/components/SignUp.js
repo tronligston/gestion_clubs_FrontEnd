@@ -1,7 +1,39 @@
 import React, {Component,Fragment} from 'react';
+import request from 'superagent';
 
 
 class SignUp extends Component {
+
+	constructor(props)
+	{
+		super(props)
+		this.state={"login":"","password":"","nom":"","email":"","age":""}
+		this.handleChange=this.handleChange.bind(this)
+		this.submited=this.submited.bind(this)
+	}
+
+	handleChange(event){
+		this.setState({[event.target.name]:event.target.value})
+	}
+
+	submited(){
+
+		console.log('response');
+		request
+			.post('http://localhost:8080/comptes/register')
+			.set('Content-Type', 'application/json')
+			.send({login:this.state.login,password:this.state.password,utilisateur:{nom:this.state.nom,email:this.state.email,age:this.state.age}})
+			.end(function(err, res){
+				if (res.status >= 200 && res.status < 300) {
+					alert("Compte tcrea mzyan")
+					return res;
+				
+				  } else {
+					alert("kayn chi mochkil")
+				   console.log('fuck');
+				  }
+			});  
+	}
 
 render(){
     return (
@@ -19,32 +51,32 @@ render(){
 			<div className="card-body">
 				<form>
 					<div className="input-group form-group">
-						<input type="text" className="form-control" placeholder="Nom"/>
+						<input name="nom" type="text" className="form-control" placeholder="Nom" onChange={this.handleChange}/>
 						
 					</div>
                     <div className="input-group form-group">
-                        <input type="text" className="form-control" placeholder="Prenom"/>
+                        <input name="login" type="text" className="form-control" placeholder="Login" onChange={this.handleChange}/>
                     </div>
                     <div className="input-group form-group">
-                        <input type="number" className="form-control" placeholder="Age"/>
+                        <input name="age" type="number" className="form-control" placeholder="Age" onChange={this.handleChange}/>
                     </div>
                     <div className="input-group form-group">
-                        <input type="email" className="form-control" placeholder="Email"/>
+                        <input name="email" type="email" className="form-control" placeholder="Email" onChange={this.handleChange}/>
                     </div>
 					<div className="input-group form-group">
 						<div className="input-group-prepend">
 							<span className="input-group-text"></span>
 						</div>
-						<input type="password" className="form-control" placeholder="Password"/>
+						<input name="password" type="password" className="form-control" placeholder="Password" onChange={this.handleChange}/>
 					</div>
                     <div className="input-group form-group">
 						<div className="input-group-prepend">
 							<span className="input-group-text"></span>
 						</div>
-						<input type="password" className="form-control" placeholder="Confirm password"/>
+						<input type="password" className="form-control" placeholder="Confirm password" onChange={this.handleChange}/>
 					</div>
 					<div className="form-group">
-						<input type="submit" value="Register" className="btn float-right login_btn"/>
+						<input onClick={this.submited} type="button" value="Register" className="btn float-right login_btn"/>
 					</div>
 				</form>
 			</div>
