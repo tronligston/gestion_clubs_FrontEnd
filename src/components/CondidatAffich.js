@@ -1,6 +1,5 @@
 import React, {Component,Fragment} from 'react';
 import Condidat from './Candidat';
-import './styles.css';
 
 
 class CondidatAffich extends Component {

@@ -11,7 +11,8 @@ import MenuAdministrateur from './MenuAdministrateur.js'
 import MenuTeamLeader from './MenuTeamLeader.js'
 import MenuMembreAdherant from './MenuMembreAdherant.js'
 import Recrutements from './Recrutements.js'
-import Candidature from './Candidature'
+import Candidat from './Candidat'
+import NewClub from './NewClub'
 
 // first app ever
 class App4 extends React.Component {
@@ -46,7 +47,6 @@ class App4 extends React.Component {
   }
 
   render() {
-      console.log(this.state)
     return (
       <div className="super_container">  
         {/*<Menu menuClicked={this.menuClicked} selected={this.state.selected} />*/}
@@ -59,7 +59,8 @@ class App4 extends React.Component {
         {this.state.selected=="clubs"&&<Clubs />}
         {this.state.selected=="recrutements"&&<Recrutements idUser={this.props.id}/>}
         {this.state.selected=="signInUp"&&<SignInUp />}
-        {this.state.selected=="candidatures"&&<Candidature />}
+        {this.state.selected=="candidatures"&&<Candidat />}
+        {this.state.selected=="clubAjout"&&<NewClub />}
         <Footer />
       </div>    
       );

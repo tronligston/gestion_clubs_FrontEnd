@@ -58,13 +58,12 @@ class Menu extends React.Component {
                       onClick={this.props.menuClicked.bind(this,'clubs')}>
                     <a href="#">Recrutements</a>
                   </li>
-                  <li className={this.props.selected=='clubs'&&"active"}
-                      onClick={this.props.menuClicked.bind(this,'clubs')}>
+                  <li className={this.props.selected=='clubs'&&"active"}>
                       <div class="dropdown">
                       <a className="dropbtn" href="javascript:void(0)">Clubs</a>
                       <div class="dropdown-content">
                         <a href="javascript:void(0)">clubs FSTS</a>
-                        <a href="javascript:void(0)">Ajout</a>
+                        <a href="javascript:void(0)"onClick={this.props.menuClicked.bind(this,'clubAjout')}>Ajout</a>
                         <a href="javascript:void(0)">Suppression</a>
                       </div>
                     </div>

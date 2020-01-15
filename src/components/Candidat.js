@@ -1,7 +1,6 @@
 import React, {Component,Fragment} from 'react';
 import Axios from 'axios';
 import CondidatAffiche from './CondidatAffich'
-import './styles.css';
 
 
 class Condidat extends Component {
@@ -10,13 +9,12 @@ class Condidat extends Component {
 		this.state={condidats: []}
 	}
 
-	componentWillMount()
+	componentDidMount()
 	{
+		console.log("hey")
 		Axios.get('http://localhost:8080/candidatures/all').then(
-			
 			res=>{
 				this.setState({condidats: res.data})
-				console.log(this.state.condidats)
 			})
 	}
 	
@@ -28,7 +26,7 @@ class Condidat extends Component {
 			<div className="row">
 				<div className="col">
 					<div className="section_title_container text-center">
-						<h2 className="section_title">Liste des condidatures</h2>
+						<h2 className="section_title">Liste des candidatures</h2>
 					</div>
 					
 				</div>
@@ -47,6 +45,7 @@ class Condidat extends Component {
 					</tr>             
 			{this.state.condidats.map(cond =>
 					{
+						console.log(cond)
 						return <CondidatAffiche condidat={cond} key={cond.idCandidature}/>
 					})}
 		
