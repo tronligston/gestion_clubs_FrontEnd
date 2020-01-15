@@ -39,8 +39,7 @@ render(){
 								<div className="course_info_text"><a href="#">{this.state.event.theme}</a></div>
 							</div>
 
-							
-							<div onClick={this.props.clicked} className="button course_info_item">
+							<div onClick={this.props.clicked.bind(this,this.state.clubs[0])} className="button course_info_item">
                                 <span>Demande d'Adhésion</span>
 							</div>
 

@@ -1,19 +1,44 @@
 import React, {Component,Fragment} from 'react';
+import Axios from 'axios'
 class Candidature extends Component {
 	constructor(props)
 	{
 		super(props)
 		this.state={email:'',comp:'',motiv:''}
 		this.handleChange=this.handleChange.bind(this)
+		this.submited=this.submited.bind(this)
 	}
 
 	 handleChange(event) {
-		 console.log("hey")
 		this.setState({[event.target.name]:event.target.value})
+	}
+
+	submited(){
+		console.log(this.props)
+		var url1='http://localhost:8080/users/all/'
+		url1=url1.concat(this.props.idUser)
+		var url2='http://localhost:8080/clubs/search/'
+		url2=url2.concat(this.props.idClub)
+		var user,club,data;
+		
+		Axios.get(url2).then(
+			res=>{
+				club=res.data
+				Axios.get(url1).then(
+					res=>{
+						user=res.data
+						data={"club":club,"utilisateur":user,"motivation":this.state.motiv,"skills":this.state.motiv}
+						Axios.post('http://localhost:8080/candidatures/create',data).then(res => {
+							console.log(res);
+						  })
+						
+					})
+			})
+        
 	}
 	
 render(){
-	console.log(this.state)
+	console.log(this.props)
     return(
 
 <div className="events2">
@@ -41,7 +66,7 @@ render(){
 									<textarea onChange={this.handleChange} name="motiv" className="comment_input comment_textarea" required="required" maxlength="200"></textarea>
 								</div>
 								<div>
-									<button type="submit" className="comment_button trans_200">Envoyer </button>
+									<button type="button" onClick={this.submited} className="comment_button trans_200">Envoyer</button>
 								</div>
 							</form>
 						</div>

@@ -11,6 +11,7 @@ import MenuAdministrateur from './MenuAdministrateur.js'
 import MenuTeamLeader from './MenuTeamLeader.js'
 import MenuMembreAdherant from './MenuMembreAdherant.js'
 import Recrutements from './Recrutements.js'
+import Candidature from './Candidature'
 
 // first app ever
 class App4 extends React.Component {
@@ -58,6 +59,7 @@ class App4 extends React.Component {
         {this.state.selected=="clubs"&&<Clubs />}
         {this.state.selected=="recrutements"&&<Recrutements idUser={this.props.id}/>}
         {this.state.selected=="signInUp"&&<SignInUp />}
+        {this.state.selected=="candidatures"&&<Candidature />}
         <Footer />
       </div>    
       );

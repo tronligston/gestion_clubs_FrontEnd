@@ -56,13 +56,14 @@ class Menu extends React.Component {
                       <a className="dropbtn" href="javascript:void(0)">Mon Club</a>
                       <div class="dropdown-content">
                         <a href="javascript:void(0)">membres </a>
-                        <a href="javascript:void(0)">Candidatures</a>
+                        <a onClick={this.props.menuClicked.bind(this,'candidatures')}
+                           href="javascript:void(0)">Candidatures</a>
                         <a href="javascript:void(0)">Carte Adhésion</a>
                       </div>
                     </div>
                   </li>
-                 <li className={this.props.selected=='clubs'&&"active"}
-                      onClick={this.props.menuClicked.bind(this,'clubs')}>
+                 <li className={this.props.selected=='event'&&"active"}
+                      onClick={this.props.menuClicked.bind(this,'event')}>
                     <div class="dropdown">
                       <a className="dropbtn" href="javascript:void(0)">Evenements</a>
                       <div class="dropdown-content">
@@ -71,8 +72,8 @@ class Menu extends React.Component {
                       </div>
                     </div>
                   </li>
-                   <li className={this.props.selected=='clubs'&&"active"}
-                      onClick={this.props.menuClicked.bind(this,'clubs')}>
+                   <li className={this.props.selected=='recrutements'&&"active"}
+                      onClick={this.props.menuClicked.bind(this,'recrutements')}>
                     <a href="javascript:void(0)">Recrutements</a>
                   </li>
                   
