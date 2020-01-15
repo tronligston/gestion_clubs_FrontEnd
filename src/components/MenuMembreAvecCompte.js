@@ -39,7 +39,7 @@ class Menu extends React.Component {
           <div className="col">
             <div className="header_content d-flex flex-row align-items-center justify-content-start">
               <div className="logo_container">
-                <a href="#">
+                <a href="javascript:void(0)">
                   <div className="logo_text"><span>Clubs</span>Universitaire</div>
                 </a>
               </div>
@@ -47,29 +47,25 @@ class Menu extends React.Component {
                 <ul className="main_nav">
                   <li className={this.props.selected=='home'&&"active"}
                       onClick={this.props.menuClicked.bind(this,'home')}>
-                    <a href="#">Acceuil</a>
+                    <a href="javascript:void(0)">Acceuil</a>
                   </li>
                   <li className={this.props.selected=='event'&&"active"}
                       onClick={this.props.menuClicked.bind(this,'event')}>
-                    <a href="#">Evenements</a>
+                    <a href="javascript:void(0)">Evenements</a>
                   </li>
                   <li className={this.props.selected=='clubs'&&"active"}
                       onClick={this.props.menuClicked.bind(this,'clubs')}>
-                    <a href="#">Clubs</a>
+                    <a href="javascript:void(0)">Clubs</a>
                   </li>
-                   <li className={this.props.selected=='clubs'&&"active"}
-                      onClick={this.props.menuClicked.bind(this,'clubs')}>
-                    <a href="#">Recrutements</a>
+                   <li className={this.props.selected=='recrutements'&&"active"}
+                      onClick={this.props.menuClicked.bind(this,'recrutements')}>
+                    <a href="javascript:void(0)">Recrutements</a>
                   </li>
                   <li className="login_button"
                       onClick={this.props.menuClicked.bind(this,'signInUp')}>
-                    <a href="#">Se déconnecter</a></li>
+                    <a href="javascript:void(0)">Se déconnecter</a></li>
                 </ul>
-                <div className="search_button"><i className="fa fa-search" aria-hidden="true"></i></div>
-  
-                
-  
-                <div className="shopping_cart"><i className="fa fa-shopping-cart" aria-hidden="true"></i></div>
+              
                 <div className="hamburger menu_mm">
                   <i className="fa fa-bars menu_mm" aria-hidden="true"></i>
                 </div>
@@ -113,10 +109,10 @@ class Menu extends React.Component {
           <nav className="menu_nav">
               <ul className="menu_mm">
                   <li className="menu_mm"><a href="index.html">Home</a></li>
-                  <li className="menu_mm"><a href="#">About</a></li>
-                  <li className="menu_mm"><a href="#">Courses</a></li>
-                  <li className="menu_mm"><a href="#">Blog</a></li>
-                  <li className="menu_mm"><a href="#">Page</a></li>
+                  <li className="menu_mm"><a href="javascript:void(0)">About</a></li>
+                  <li className="menu_mm"><a href="javascript:void(0)">Courses</a></li>
+                  <li className="menu_mm"><a href="javascript:void(0)">Blog</a></li>
+                  <li className="menu_mm"><a href="javascript:void(0)">Page</a></li>
                   <li className="menu_mm"><a href="contact.html">Contact</a></li>
               </ul>
           </nav>

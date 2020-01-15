@@ -39,7 +39,7 @@ class Menu extends React.Component {
           <div className="col">
             <div className="header_content d-flex flex-row align-items-center justify-content-start">
               <div className="logo_container">
-                <a href="#">
+                <a href="javascript:void(0)">
                   <div className="logo_text"><span>Clubs</span>Universitaire</div>
                 </a>
               </div>
@@ -81,10 +81,10 @@ class Menu extends React.Component {
           <nav className="menu_nav">
               <ul className="menu_mm">
                   <li className="menu_mm"><a href="index.html">Home</a></li>
-                  <li className="menu_mm"><a href="#">About</a></li>
-                  <li className="menu_mm"><a href="#">Courses</a></li>
-                  <li className="menu_mm"><a href="#">Blog</a></li>
-                  <li className="menu_mm"><a href="#">Page</a></li>
+                  <li className="menu_mm"><a href="javascript:void(0)">About</a></li>
+                  <li className="menu_mm"><a href="javascript:void(0)">Courses</a></li>
+                  <li className="menu_mm"><a href="javascript:void(0)">Blog</a></li>
+                  <li className="menu_mm"><a href="javascript:void(0)">Page</a></li>
                   <li className="menu_mm"><a href="contact.html">Contact</a></li>
               </ul>
           </nav>

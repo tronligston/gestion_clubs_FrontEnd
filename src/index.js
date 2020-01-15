@@ -7,6 +7,7 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import App2 from './components/App2'
 import App3 from './components/App3'
 import App4 from './components/App4'
+import App5 from './components/App5'
 
 const hundle=props=>{
     const id=props.match.params.id
@@ -23,6 +24,13 @@ const hundle3=props=>{
   return <App4 id={id}/>
 }
 
+const hundle4=props=>{
+  const id=props.match.params.id
+  const idUser=props.match.params.idUser
+
+  return <App5 id={id} idUser={idUser}/>
+}
+
 const routing = (
     <Router>
       <div>
@@ -30,6 +38,7 @@ const routing = (
         <Route path="/evenement/:id" component={hundle} />
         <Route path="/club/:id" component={hundle2} />
         <Route path="/authentified/:id" component={hundle3} />
+        <Route path="/recrutement/:id/:idUser" component={hundle4} />
       </div>
     </Router>
   )

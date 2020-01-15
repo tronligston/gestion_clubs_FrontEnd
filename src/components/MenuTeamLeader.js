@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class Menu extends React.Component {
 
   render() {
@@ -29,7 +30,7 @@ class Menu extends React.Component {
             </div>
           </div>
         </div>
-      </div>				
+      </div>        
     </div>
   
     
@@ -47,43 +48,44 @@ class Menu extends React.Component {
                 <ul className="main_nav">
                   <li className={this.props.selected=='home'&&"active"}
                       onClick={this.props.menuClicked.bind(this,'home')}>
-                    <a href="#">Acceuil</a>
-                  </li>
-                 
-                  <li className={this.props.selected=='clubs'&&"active"}
-                      onClick={this.props.menuClicked.bind(this,'clubs')}>
-                    <a href="#">membres du club</a>
+                    <a href="javascript:void(0)">Acceuil</a>
                   </li>
                   <li className={this.props.selected=='clubs'&&"active"}
                       onClick={this.props.menuClicked.bind(this,'clubs')}>
-                    <a href="#">Candidatures</a>
+                    <div class="dropdown">
+                      <a className="dropbtn" href="javascript:void(0)">Mon Club</a>
+                      <div class="dropdown-content">
+                        <a href="javascript:void(0)">membres </a>
+                        <a href="javascript:void(0)">Candidatures</a>
+                        <a href="javascript:void(0)">Carte Adhésion</a>
+                      </div>
+                    </div>
                   </li>
-
-                   <li className={this.props.selected=='event'&&"active"}
-                      onClick={this.props.menuClicked.bind(this,'event')}>
-                    <a href="#">Evenements</a>
-                  </li>
-                  <li className={this.props.selected=='clubs'&&"active"}
+                 <li className={this.props.selected=='clubs'&&"active"}
                       onClick={this.props.menuClicked.bind(this,'clubs')}>
-                    <a href="#">Nouveau Evenement</a>
+                    <div class="dropdown">
+                      <a className="dropbtn" href="javascript:void(0)">Evenements</a>
+                      <div class="dropdown-content">
+                        <a href="javascript:void(0)">Création </a>
+                        <a href="javascript:void(0)">Evenements du Club</a>
+                      </div>
+                    </div>
                   </li>
                    <li className={this.props.selected=='clubs'&&"active"}
                       onClick={this.props.menuClicked.bind(this,'clubs')}>
-                    <a href="#">Recrutements</a>
+                    <a href="javascript:void(0)">Recrutements</a>
                   </li>
-                   <li className={this.props.selected=='clubs'&&"active"}
-                      onClick={this.props.menuClicked.bind(this,'clubs')}>
-                    <a href="#">Carte d'Adhésion</a>
-                  </li>
+                  
+                  
                   <li className="login_button"
                       onClick={this.props.menuClicked.bind(this,'signInUp')}>
                     <a href="#">Se déconnecter</a></li>
                 </ul>
-                <div className="search_button"><i className="fa fa-search" aria-hidden="true"></i></div>
+                
   
                 
   
-                <div className="shopping_cart"><i className="fa fa-shopping-cart" aria-hidden="true"></i></div>
+                
                 <div className="hamburger menu_mm">
                   <i className="fa fa-bars menu_mm" aria-hidden="true"></i>
                 </div>
@@ -110,8 +112,8 @@ class Menu extends React.Component {
             </div>
           </div>
         </div>
-      </div>			
-    </div>			
+      </div>      
+    </div>      
   </header>
   
   <div className="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class Menu extends React.Component {
 
   render() {
@@ -53,28 +54,31 @@ class Menu extends React.Component {
                       onClick={this.props.menuClicked.bind(this,'event')}>
                     <a href="#">Evenements</a>
                   </li>
-                  <li className={this.props.selected=='clubs'&&"active"}
-                      onClick={this.props.menuClicked.bind(this,'clubs')}>
-                    <a href="#">Clubs</a>
-                    <ul>
-                    <li><a href="">tous les clubs </a></li>
-                    <li><a href="">Ajouter club</a></li>
-                    <li><a href="">Supprimer club</a></li>
-                   </ul>
-                  </li>
                    <li className={this.props.selected=='clubs'&&"active"}
                       onClick={this.props.menuClicked.bind(this,'clubs')}>
                     <a href="#">Recrutements</a>
                   </li>
+                  <li className={this.props.selected=='clubs'&&"active"}
+                      onClick={this.props.menuClicked.bind(this,'clubs')}>
+                      <div class="dropdown">
+                      <a className="dropbtn" href="javascript:void(0)">Clubs</a>
+                      <div class="dropdown-content">
+                        <a href="javascript:void(0)">clubs FSTS</a>
+                        <a href="javascript:void(0)">Ajout</a>
+                        <a href="javascript:void(0)">Suppression</a>
+                      </div>
+                    </div>
+                  </li>
+                  
                   <li className="login_button"
                       onClick={this.props.menuClicked.bind(this,'signInUp')}>
                     <a href="#">Se déconnecter</a></li>
                 </ul>
-                <div className="search_button"><i className="fa fa-search" aria-hidden="true"></i></div>
+                
   
                 
   
-                <div className="shopping_cart"><i className="fa fa-shopping-cart" aria-hidden="true"></i></div>
+                
                 <div className="hamburger menu_mm">
                   <i className="fa fa-bars menu_mm" aria-hidden="true"></i>
                 </div>

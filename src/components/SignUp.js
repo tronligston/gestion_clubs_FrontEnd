@@ -25,13 +25,14 @@ class SignUp extends Component {
 			.send({login:this.state.login,password:this.state.password,utilisateur:{nom:this.state.nom,email:this.state.email,age:this.state.age}})
 			.end(function(err, res){
 				if (res.status >= 200 && res.status < 300) {
-					console.log(res.text)
-					alert("hey")
+					var url='http://localhost:3000/authentified/'
+					const utilisateur=JSON.parse(res.text)
+					url=url.concat(utilisateur.utilisateur.idUser)
+					window.location.replace(url)
 					return res;
 				
 				  } else {
 					alert("kayn chi mochkil")
-				   console.log('fuck');
 				  }
 			});  
 	}
