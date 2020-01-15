@@ -15,14 +15,14 @@ class Menu extends React.Component {
             <div className="col">
               <div className="top_bar_content d-flex flex-row align-items-center justify-content-start">
                 <ul className="top_bar_contact_list">
-                  <li><div className="question">Avez-vous des quesions?</div></li>
+                  <li><div className="question">Université Hassan 1er. Faculté des Sciences et Techniques de Settat. </div></li>
                   <li>
                     <i className="fa fa-phone" aria-hidden="true"></i>
-                    <div>05 85 84 84 83</div>
+                    <div>BP 577. 26000 Settat. Tél : 0523 40 07 36 Fax : 0523 40 09 69 </div>
                   </li>
                   <li>
                     <i className="fa fa-envelope-o" aria-hidden="true"></i>
-                    <div>club_fsts@gmail.com</div>
+                    <div>figi5p@gmail.com</div>
                   </li>
                 </ul>
               </div>

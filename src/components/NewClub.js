@@ -7,7 +7,7 @@ class NewClub extends Component {
 	constructor(props)
 	{
 		super(props)
-		this.state={"intitule":"","description":"","idUser":"","nom":"","age":"","email":""}
+		this.state={"intitule":"","description":"","nom":"","email":"","age":""}
 		this.handleChange=this.handleChange.bind(this)
 		this.submited=this.submited.bind(this)
 	}
@@ -22,7 +22,7 @@ class NewClub extends Component {
 		request
 			.post('http://localhost:8080/clubs/create')
 			.set('Content-Type', 'application/json')
-			.send({intitule:this.state.intitule,description:this.state.description,teamLeader:{idUser:this.state.idUser,nom:this.state.nom,email:this.state.email,age:this.state.age}})
+			.send({intitule:this.state.intitule,description:this.state.description,teamLeader:{nom:this.state.nom,email:this.state.email,age:this.state.age}})
 			.end(function(err, res){
 				if (res.status >= 200 && res.status < 300) {
 					console.log(res.text)
@@ -55,18 +55,16 @@ render(){
                     <div className="input-group form-group">
                         <input name="description" type="text" className="form-control" placeholder="Description" onChange={this.handleChange}/>
                     </div>
-                    <div className="input-group form-group">
-                        <input name="idUser" type="number" className="form-control" placeholder="Veuillez saisir votre ID" onChange={this.handleChange}/>
+					<div className="input-group form-group">
+                        <input name="nom" type="text" className="form-control" placeholder="Saisir votre nom" onChange={this.handleChange}/>
                     </div>
 					<div className="input-group form-group">
-                        <input name="nom" type="email" className="form-control" placeholder="Saisir votre nom" onChange={this.handleChange}/>
-                    </div>
-					<div className="input-group form-group">
-                        <input name="age" type="email" className="form-control" placeholder="Confirmer votre age" onChange={this.handleChange}/>
-                    </div>
-                    <div className="input-group form-group">
                         <input name="email" type="email" className="form-control" placeholder="Confirmer votre Email" onChange={this.handleChange}/>
                     </div>
+					<div className="input-group form-group">
+                        <input name="age" type="text" className="form-control" placeholder="Confirmer votre age" onChange={this.handleChange}/>
+                    </div>
+                    
 					
 					<div className="form-group">
 						<input onClick={this.submited} type="button" value="Annuler" className="btn float-right login_btn" style={{color:"yellow",backgroundColor:"grey"}}/>
