@@ -29,7 +29,9 @@ class Candidature extends Component {
 						user=res.data
 						data={"club":club,"utilisateur":user,"motivation":this.state.motiv,"skills":this.state.motiv}
 						Axios.post('http://localhost:8080/candidatures/create',data).then(res => {
-							console.log(res);
+							var url='http://localhost:3000/authentified/'
+							url=url.concat(this.props.idUser)
+							window.location.replace(url)
 						  })
 						
 					})

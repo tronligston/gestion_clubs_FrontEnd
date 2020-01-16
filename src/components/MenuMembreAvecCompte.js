@@ -21,7 +21,7 @@ class Menu extends React.Component {
                     <div>BP 577. 26000 Settat. Tél : 0523 40 07 36 Fax : 0523 40 09 69 </div>
                   </li>
                   <li>
-                    <i className="fa fa-envelope-o" aria-hidden="true"></i>
+                  
                     <div>figi5p@gmail.com</div>
                   </li>
                 </ul>

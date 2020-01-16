@@ -35,7 +35,7 @@ render(){
 							
 							<div className="course_info_item">
 								<div className="course_info_title">Club's Name</div>
-								<div className="course_info_text"><a href="#">{this.state.club.intitule}</a></div>
+								<div className="course_info_text"><a href="">{this.state.club.intitule}</a></div>
 							</div>
 
 							
@@ -47,7 +47,7 @@ render(){
 							
 							<div className="course_info_item">
 								<div className="course_info_title">Date de Création:</div>
-								<div className="course_info_text"><a href="#">{String(this.state.club.dateCreation).substring(0,10)}</a></div>
+								<div className="course_info_text"><a href="">{String(this.state.club.dateCreation).substring(0,10)}</a></div>
 							</div>
 
 						</div>

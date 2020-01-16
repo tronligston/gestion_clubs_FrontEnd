@@ -31,7 +31,7 @@ class SignIn extends Component {
 					return res;
 				
 				  } else {
-					alert("fin ghadi fin awa ghadi")
+					
 				  }
 			});  
 	}
@@ -41,12 +41,8 @@ render(){
         <div className="d-flex justify-content-center h-100">
 		<div className="card">
 			<div className="card-header">
-				<h3>Sign In</h3>
-				<div className="d-flex justify-content-end social_icon">
-					<span><i className="fab fa-facebook-square"></i></span>
-					<span><i className="fab fa-google-plus-square"></i></span>
-					<span><i className="fab fa-twitter-square"></i></span>
-				</div>
+				<h3>Se Connecter</h3>
+				
 			</div>
 			<div className="card-body">
 				<form>
@@ -75,10 +71,10 @@ render(){
 			</div>
 			<div className="card-footer">
 				<div className="d-flex justify-content-center links">
-					Don't have an account?<a href="#" onClick={this.props.clicked}>Sign Up</a>
+					Vous n'avez pas du Compte?<a href="#" onClick={this.props.clicked}>S'inscrire</a>
 				</div>
 				<div className="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
+					<a href="">Vous avez Oublié le mot de passe?</a>
 				</div>
 			</div>
 		</div>

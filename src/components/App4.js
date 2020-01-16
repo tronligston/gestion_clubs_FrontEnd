@@ -13,7 +13,10 @@ import MenuMembreAdherant from './MenuMembreAdherant.js'
 import Recrutements from './Recrutements.js'
 import Candidat from './Candidat'
 import NewClub from './NewClub'
+import NewEvent from './NewEvent'
 import Card from './Card'
+import ClubMembers from './ClubMembers'
+
 
 // first app ever
 class App4 extends React.Component {
@@ -61,8 +64,11 @@ class App4 extends React.Component {
         {this.state.selected=="recrutements"&&<Recrutements idUser={this.props.id}/>}
         {this.state.selected=="signInUp"&&<SignInUp />}
         {this.state.selected=="candidatures"&&<Candidat />}
-        {this.state.selected=="clubAjout"&&<NewClub />}
-        {this.state.selected=="card"&&<Card />}
+        {this.state.selected=="clubAjout"&&<NewClub idUser={this.props.id}/>}
+        
+         {this.state.selected=="membres"&&<ClubMembers />}
+          {this.state.selected=="newevent"&&<NewEvent idUser={this.props.id}/>}
+        {this.state.selected=="card"&&<Card idUser={this.props.id}/>}
         <Footer />
       </div>    
       );

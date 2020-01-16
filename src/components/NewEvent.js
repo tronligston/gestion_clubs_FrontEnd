@@ -10,10 +10,16 @@ class NewEvent extends Component {
 		this.state={"titre":"","theme":"","lieu":"","dateDebut":"","dateFin":"","description":""}
 		this.handleChange=this.handleChange.bind(this)
 		this.submited=this.submited.bind(this)
+		this.done=this.done.bind(this)
 	}
 
 	handleChange(event){
 		this.setState({[event.target.name]:event.target.value})
+	}
+	done(){
+		var url='http://localhost:3000/authentified/'
+					url=url.concat(this.props.idUser)
+					window.location.replace(url)
 	}
 
 	submited(){
@@ -25,19 +31,19 @@ class NewEvent extends Component {
 			.send({titre:this.state.titre,theme:this.state.theme,lieu:this.state.lieu,dateDebut:this.state.dateDebut,dateFin:this.state.dateFin,description:this.state.description})
 			.end(function(err, res){
 				if (res.status >= 200 && res.status < 300) {
-					console.log(res.text)
-					alert("hey")
-					return res;
+					
+					
 				
 				  } else {
-					alert("kayn chi mochkil")
+				
 				   console.log('fuck');
 				  }
 			});  
+			this.done()
 	}
 
     render(){
-    
+		console.log(this.props)
         return(
 
             <div className="d-flex justify-content-center h-100" style={{padding:"100px",marginTop:"50px"}}>

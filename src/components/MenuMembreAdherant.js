@@ -22,7 +22,7 @@ class Menu extends React.Component {
                     <div>BP 577. 26000 Settat. Tél : 0523 40 07 36 Fax : 0523 40 09 69 </div>
                   </li>
                   <li>
-                    <i className="fa fa-envelope-o" aria-hidden="true"></i>
+                  
                     <div>figi5p@gmail.com</div>
                   </li>
                 </ul>
@@ -51,11 +51,11 @@ class Menu extends React.Component {
                     <a href="javascript:void(0)">Acceuil</a>
                   </li>
                    
-                   <li className={this.props.selected=='clubs'&&"active"}>
+                   <li className={this.props.selected=='clubs'&&"active"} >
                     <div class="dropdown">
                     <a className="dropbtn" href="javascript:void(0)">Mon Club</a>
                     <div class="dropdown-content">
-                      <a  href="javascript:void(0)">Evenements </a>
+                      <a   onClick={this.props.menuClicked.bind(this,'event')} href="javascript:void(0)">Evenements </a>
                       <a  onClick={this.props.menuClicked.bind(this,'card')}     href="javascript:void(0)">Carte Adhésion</a>
                     </div>
                     </div>

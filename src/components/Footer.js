@@ -58,8 +58,8 @@ class Footer extends React.Component {
 								<div className="footer_section footer_mobile">
 									<div className="footer_title">Mobile</div>
 									<div className="footer_mobile_content">
-										<div className="footer_image"><a href="#"><img src="images/mobile_1.png" alt=""/></a></div>
-										<div className="footer_image"><a href="#"><img src="images/mobile_2.png" alt=""/></a></div>
+										<div className="footer_image"><a href=""><img src="images/mobile_1.png" alt=""/></a></div>
+										<div className="footer_image"><a href=""><img src="images/mobile_2.png" alt=""/></a></div>
 									</div>
 								</div>
 								

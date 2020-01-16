@@ -52,7 +52,7 @@ render(){
 						</div>
 
 						
-						<div className="course_image"><img src="images/course_image.jpg" alt=""/></div>
+						<div className="course_image"><img src="images/rec2.jpg" alt=""/></div>
 
 						
 						<div className="course_tabs_container">

@@ -19,7 +19,7 @@ class Evenement extends Component {
     return (
         <div className="col-lg-4 event_col">
         <div className="event event_left">
-            <div className="event_image"><img src="images/event_1.jpg" alt="" onClick={this.Click}/>
+            <div className="event_image"><img src="images/img.jpg" alt="" onClick={this.Click}/>
             
             </div>
             <div className="event_body d-flex flex-row align-items-start justify-content-start">

@@ -22,7 +22,7 @@ class Menu extends React.Component {
                     <div>BP 577. 26000 Settat. Tél : 0523 40 07 36 Fax : 0523 40 09 69 </div>
                   </li>
                   <li>
-                    <i className="fa fa-envelope-o" aria-hidden="true"></i>
+                   
                     <div>figi5p@gmail.com</div>
                   </li>
                 </ul>
@@ -54,20 +54,20 @@ class Menu extends React.Component {
                     <div class="dropdown">
                       <a className="dropbtn" href="javascript:void(0)">Mon Club</a>
                       <div class="dropdown-content">
-                        <a href="javascript:void(0)">membres </a>
+                        <a href="javascript:void(0)" onClick={this.props.menuClicked.bind(this,'membres')} >membres </a>
                         <a onClick={this.props.menuClicked.bind(this,'candidatures')}
                            href="javascript:void(0)">Candidatures</a>
-                        <a href="javascript:void(0)">Carte Adhésion</a>
+                        <a  onClick={this.props.menuClicked.bind(this,'card')} href="javascript:void(0)">Carte Adhésion</a>
                       </div>
                     </div>
                   </li>
-                 <li className={this.props.selected=='event'&&"active"}
-                      onClick={this.props.menuClicked.bind(this,'event')}>
+                 <li className={this.props.selected=='newevent'&&"active"}
+                      onClick={this.props.menuClicked.bind(this,'newevent')}>
                     <div class="dropdown">
-                      <a className="dropbtn" href="javascript:void(0)">Evenements</a>
+                      <a className="dropbtn" href="javascript:void(0)"  onClick={this.props.menuClicked.bind(this,'event')}>Evenements</a>
                       <div class="dropdown-content">
-                        <a href="javascript:void(0)">Création </a>
-                        <a href="javascript:void(0)">Evenements du Club</a>
+                        <a href="javascript:void(0)  onClick={this.props.menuClicked.bind(this,'newevent')}" >Création </a>
+                       
                       </div>
                     </div>
                   </li>

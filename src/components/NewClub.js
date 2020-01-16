@@ -10,10 +10,16 @@ class NewClub extends Component {
 		this.state={"intitule":"","description":"","nom":"","email":"","age":""}
 		this.handleChange=this.handleChange.bind(this)
 		this.submited=this.submited.bind(this)
+		this.done=this.done.bind(this)
 	}
 
 	handleChange(event){
 		this.setState({[event.target.name]:event.target.value})
+	}
+	done(){
+		var url='http://localhost:3000/authentified/'
+					url=url.concat(this.props.idUser)
+					window.location.replace(url)
 	}
 
 	submited(){
@@ -26,14 +32,14 @@ class NewClub extends Component {
 			.end(function(err, res){
 				if (res.status >= 200 && res.status < 300) {
 					console.log(res.text)
-					alert("hey")
 					return res;
 				
 				  } else {
-					alert("kayn chi mochkil")
-				   console.log('fuck');
+					
+				 
 				  }
 			});  
+			this.done()
 	}
 
 render(){
@@ -67,8 +73,8 @@ render(){
                     
 					
 					<div className="form-group">
-						<input onClick={this.submited} type="button" value="Annuler" className="btn float-right login_btn" style={{color:"yellow",backgroundColor:"grey"}}/>
-						<input type="button" value="Créer" className="btn float-left login_btn"/>
+						<input type="button" value="Annuler" className="btn float-right login_btn" style={{color:"yellow",backgroundColor:"grey"}}/>
+						<input  onClick={this.submited} type="button" value="Créer" className="btn float-left login_btn"/>
 
 					</div>
 				</form>

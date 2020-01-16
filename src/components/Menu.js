@@ -21,7 +21,7 @@ class Menu extends React.Component {
                     <div>BP 577. 26000 Settat. Tél : 0523 40 07 36 Fax : 0523 40 09 69 </div>
                   </li>
                   <li>
-                    <i className="fa fa-envelope-o" aria-hidden="true"></i>
+                    
                     <div>figi5p@gmail.com</div>
                   </li>
                 </ul>
@@ -47,7 +47,7 @@ class Menu extends React.Component {
                 <ul className="main_nav">
                   <li className={this.props.selected=='home'&&"active"}
                       onClick={this.props.menuClicked.bind(this,'home')}>
-                    <a href="javascript:void(0)">Home</a>
+                    <a href="javascript:void(0)">Acceuil</a>
                   </li>
                   <li className={this.props.selected=='event'&&"active"}
                       onClick={this.props.menuClicked.bind(this,'event')}>
@@ -59,13 +59,9 @@ class Menu extends React.Component {
                   </li>
                   <li className="login_button"
                       onClick={this.props.menuClicked.bind(this,'signInUp')}>
-                    <a href="javascript:void(0)">Regiter or Login</a></li>
+                    <a href="javascript:void(0)">Regiter/Login</a></li>
                 </ul>
-                <div className="search_button"><i className="fa fa-search" aria-hidden="true"></i></div>
-  
-                
-  
-                <div className="shopping_cart"><i className="fa fa-shopping-cart" aria-hidden="true"></i></div>
+               
                 <div className="hamburger menu_mm">
                   <i className="fa fa-bars menu_mm" aria-hidden="true"></i>
                 </div>

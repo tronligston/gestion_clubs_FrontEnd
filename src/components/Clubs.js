@@ -24,7 +24,7 @@ class Clubs extends Component {
 			<div className="row">
 				<div className="col">
 					<div className="section_title_container text-center">
-						<h2 className="section_title">Liste des Clubs</h2>
+						<h2 className="section_title">Liste des Clubs de la Faculté des Sciences et Techniques de SETTAT</h2>
 					</div>
 				</div>
 			</div>
@@ -40,7 +40,7 @@ class Clubs extends Component {
 			</div>
 			<div className="row">
 				<div className="col">
-					<div className="courses_button trans_200"><a href="#">view all courses</a></div>
+					
 				</div>
 			</div>
 		</div>
